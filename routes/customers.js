@@ -66,7 +66,7 @@ router.patch('/:id',async (req, res) => {
 // Delete Customer
 router.delete('/:id', async (req, res) => {
     try {
-        const removedCustomer = await Customer.remove({_id: req.params.id})
+        const removedCustomer = await Customer.deleteOne({_id: req.params.id})
         res.json(removedCustomer)
     } catch (error) {
         res.json({message: err})
